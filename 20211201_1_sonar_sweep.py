@@ -1,4 +1,4 @@
-input_text = open('20211201_1_sonar_sweep_input.txt')
+input_text = open('20211201_sonar_sweep_input.txt')
 input_list = list(input_text)
 input_list = [int(strint) for strint in input_list]
 
