@@ -12,7 +12,7 @@ the total distances for each instruction.
 Then use these values to perform the final calculation asked for in the challenge
 """
 
-input_text = open('20211202_dive_input.txt')
+input_text = open('inputs/20211202_dive_input.txt')
 input_list = list(input_text)
 instruction_list = [instruction.split(" ") for instruction in input_list]
 
@@ -25,8 +25,7 @@ for instruction in instruction_list:
   
 depth = instruction_count['down'] - instruction_count['up']
 
-print("(2-1) The depth multiplied by the forward distance is:")
-print(instruction_count['forward'] * depth)
+solution_2_1 = instruction_count['forward'] * depth
 
 """
 Solution to part two
@@ -53,6 +52,14 @@ for instruction in instruction_list:
     horizontal += instruction[1]
     depth += (aim * instruction[1])
 
+solution_2_2 = horizontal * depth
+
+"""
+Print statements to display solutions
+-------------------------------------
+"""
+print("(2-1) The depth multiplied by the forward distance is:")
+print(solution_2_1)
 print("")
 print("(2-2) The final horizontal position multiplied by the final depth is:")
-print(horizontal * depth)
+print(solution_2_2)
