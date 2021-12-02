@@ -12,7 +12,7 @@ the total distances for each instruction.
 Then use these values to perform the final calculation asked for in the challenge
 """
 
-input_text = open('inputs/20211202_dive_input.txt')
+input_text = open('20211202_dive_input.txt')
 input_list = list(input_text)
 instruction_list = [instruction.split(" ") for instruction in input_list]
 
