@@ -27,3 +27,32 @@ depth = instruction_count['down'] - instruction_count['up']
 
 print("(2-1) The depth multiplied by the forward distance is:")
 print(instruction_count['forward'] * depth)
+
+"""
+Solution to part two
+--------------------
+Set new variables, each equal to 0:
+  (int) : aim 
+  (int) : depth
+  (int) : horizontal
+
+Iterate through (list) instruction_list (as above) and change the relevant variables as described in the instructions.
+
+Use the final values of horizontal and depth to perform the required calculation.
+"""
+
+aim = 0
+depth = 0
+horizontal = 0
+for instruction in instruction_list:
+  if instruction[0] == 'down':
+    aim += instruction[1]
+  if instruction[0] == 'up':
+    aim -= instruction[1]
+  if instruction[0] == 'forward':
+    horizontal += instruction[1]
+    depth += (aim * instruction[1])
+
+print("")
+print("(2-2) The final horizontal position multiplied by the final depth is:")
+print(horizontal * depth)
