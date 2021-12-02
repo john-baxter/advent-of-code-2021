@@ -25,8 +25,7 @@ for instruction in instruction_list:
   
 depth = instruction_count['down'] - instruction_count['up']
 
-print("(2-1) The depth multiplied by the forward distance is:")
-print(instruction_count['forward'] * depth)
+solution_2_1 = instruction_count['forward'] * depth
 
 """
 Solution to part two
@@ -53,6 +52,14 @@ for instruction in instruction_list:
     horizontal += instruction[1]
     depth += (aim * instruction[1])
 
+solution_2_2 = horizontal * depth
+
+"""
+Print statements to display solutions
+-------------------------------------
+"""
+print("(2-1) The depth multiplied by the forward distance is:")
+print(solution_2_1)
 print("")
 print("(2-2) The final horizontal position multiplied by the final depth is:")
-print(horizontal * depth)
+print(solution_2_2)
