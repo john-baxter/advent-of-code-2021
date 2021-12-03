@@ -176,12 +176,6 @@ def calculate_power_consumption(input_list):
   """
   return get_gamma_rate(input_list) * get_epsilon_rate(input_list)
 
-def delete_all_elements_with_given_value_at_specific_idx(
-  given_list, given_value, given_idx
-  ):
-  new_list = [element for element in given_list if int(element[given_idx]) == given_value]
-  return new_list
-
 
 def calculate_oxygen_rating(given_list):
   for i in range(len(given_list[0])):
