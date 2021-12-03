@@ -191,12 +191,19 @@ def calculate_oxygen_rating(given_list):
       return given_list[0]
     
   
-  
+def calculate_carbon_dioxide_rating(given_list):  
+  for i in range(len(given_list[0])):
+    non_dominant_digit_for_column_i = int((sum([int(element[i]) for element in given_list]) < len(given_list) / 2))
+    given_list = [element for element in given_list if int(element[i]) == non_dominant_digit_for_column_i]
+    if len(given_list) == 1:
+      return given_list[0]
+    
+    
 
   
     
-
-print(calculate_oxygen_rating(input_list))
+# print(calculate_oxygen_rating(input_list))
+# print(calculate_carbon_dioxide_rating(input_list))
 
 
 
