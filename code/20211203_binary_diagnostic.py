@@ -1,9 +1,7 @@
-input_text = open('inputs/20211203_binary_diagnostic_test.txt')
-# input_text = open('inputs/20211203_binary_diagnostic.txt')
+input_text = open('inputs/20211203_binary_diagnostic.txt')
 input_list = list(input_text)
 input_list = [binary_number.rstrip("\n") for binary_number in input_list]
 
-# print(input_list)
 
 def total_each_column(list_of_string_numbers):
   # assumes all elements in list_of_string_numbers have same len(element)
@@ -64,27 +62,3 @@ def calculate_power_consumption(input_list):
 
 
 print(calculate_power_consumption(input_list))
-# print(get_epsilon_rate(input_list))
-# print(get_gamma_rate(input_list))
-# print(
-  # convert_list_of_bits_to_decimal_integer(
-  #   derive_epsilon_from_gamma(
-  #     interrogate_column_totals_gamma(
-  #       total_each_column(input_list)
-  #     )
-  #   )
-  # )
-# )
-# print(derive_epsilon_from_gamma([1,1,1,1,1]))
-# print(derive_epsilon_from_gamma([0,0,0,0,0]))
-
-# print(
-#   convert_list_of_bits_to_decimal_integer(
-#     interrogate_column_totals_gamma(
-#       total_each_column(input_list)
-#     )
-#   )
-# )
-# print(interrogate_column_totals_gamma(
-#   total_each_column(input_list)))    
-# print(total_each_column(input_list))
