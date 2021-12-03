@@ -193,9 +193,12 @@ def calculate_carbon_dioxide_rating(given_list):
       return given_list[0]
     
     
+def calculate_life_support_rating(given_list):
+  return int(calculate_oxygen_rating(given_list), 2) * int(calculate_carbon_dioxide_rating(given_list), 2)
 
   
     
+print(calculate_life_support_rating(input_list))
 # print(calculate_oxygen_rating(input_list))
 # print(calculate_carbon_dioxide_rating(input_list))
 
