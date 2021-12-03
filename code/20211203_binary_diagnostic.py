@@ -5,9 +5,23 @@ The input data has been copied into a .txt file
 Use code to convert this .txt into a list of (string) binary numbers, removing 
 the trailing newline from each.
 """
-input_text = open('inputs/20211203_binary_diagnostic.txt')
-input_list = list(input_text)
-input_list = [binary_number.rstrip("\n") for binary_number in input_list]
+# input_text = open('inputs/20211203_binary_diagnostic.txt')
+# input_list = list(input_text)
+# input_list = [binary_number.rstrip("\n") for binary_number in input_list]
+input_list = [
+  "00100",
+  "11110",
+  "10110",
+  "10111",
+  "10101",
+  "01111",
+  "00111",
+  "11100",
+  "10000",
+  "11001",
+  "00010",
+  "01010",
+]
 
 
 def total_each_column(list_of_string_numbers):
@@ -162,9 +176,26 @@ def calculate_power_consumption(input_list):
   """
   return get_gamma_rate(input_list) * get_epsilon_rate(input_list)
 
-"""
-Print statements to display solutions
--------------------------------------
-"""
-print("(3-1) The power consumption is:")
-print(calculate_power_consumption(input_list))
+def delete_all_elements_with_given_value_at_specific_idx(given_list, given_value, given_idx):
+  new_list = [element for element in given_list if int(element[given_idx]) == given_value]
+  return new_list
+    
+
+
+# print(delete_all_elements_with_given_value_at_specific_idx(input_list, 1, 0))
+
+
+
+
+
+
+
+
+
+
+# """
+# Print statements to display solutions
+# -------------------------------------
+# """
+# print("(3-1) The power consumption is:")
+# print(calculate_power_consumption(input_list))
