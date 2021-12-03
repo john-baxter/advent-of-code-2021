@@ -24,8 +24,19 @@ def interrogate_column_totals_gamma(list_of_ints):
     if i < len(input_list) // 2:
       list_of_bits.append(0)
   return list_of_bits
-        
 
-print(interrogate_column_totals_gamma(
-  total_each_column(input_list)))    
+
+def convert_list_of_bits_to_decimal_integer(list_of_bits):
+  return int("".join(str(x) for x in list_of_bits), 2)
+
+
+print(
+  convert_list_of_bits_to_decimal_integer(
+    interrogate_column_totals_gamma(
+      total_each_column(input_list)
+    )
+  )
+)
+# print(interrogate_column_totals_gamma(
+#   total_each_column(input_list)))    
 # print(total_each_column(input_list))
