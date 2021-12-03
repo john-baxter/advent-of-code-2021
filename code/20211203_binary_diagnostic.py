@@ -176,13 +176,27 @@ def calculate_power_consumption(input_list):
   """
   return get_gamma_rate(input_list) * get_epsilon_rate(input_list)
 
-def delete_all_elements_with_given_value_at_specific_idx(given_list, given_value, given_idx):
+def delete_all_elements_with_given_value_at_specific_idx(
+  given_list, given_value, given_idx
+  ):
   new_list = [element for element in given_list if int(element[given_idx]) == given_value]
   return new_list
+
+
+def calculate_oxygen_rating(given_list):
+  for i in range(len(given_list[0])):
+    dominant_digit_for_column_i = int((sum([int(element[i]) for element in given_list]) >= len(given_list) / 2))
+    given_list = [element for element in given_list if int(element[i]) == dominant_digit_for_column_i]
+    if len(given_list) == 1:
+      return given_list[0]
+    
+  
+  
+
+  
     
 
-
-# print(delete_all_elements_with_given_value_at_specific_idx(input_list, 1, 0))
+print(calculate_oxygen_rating(input_list))
 
 
 
