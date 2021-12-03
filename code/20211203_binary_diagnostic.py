@@ -30,13 +30,44 @@ def convert_list_of_bits_to_decimal_integer(list_of_bits):
   return int("".join(str(x) for x in list_of_bits), 2)
 
 
-print(
-  convert_list_of_bits_to_decimal_integer(
+def derive_epsilon_from_gamma(list_of_bits):
+  new_list_of_bits = []
+  for bit in list_of_bits:
+    bit = int(not bit)
+    new_list_of_bits.append(bit)
+  return new_list_of_bits
+
+
+def get_gamma_rate(input_list):
+  gamma_rate = convert_list_of_bits_to_decimal_integer(
     interrogate_column_totals_gamma(
       total_each_column(input_list)
     )
   )
-)
+  return gamma_rate
+
+
+
+print(get_gamma_rate(input_list))
+# print(
+#   convert_list_of_bits_to_decimal_integer(
+#     derive_epsilon_from_gamma(
+#       interrogate_column_totals_gamma(
+#         total_each_column(input_list)
+#       )
+#     )
+#   )
+# )
+# print(derive_epsilon_from_gamma([1,1,1,1,1]))
+# print(derive_epsilon_from_gamma([0,0,0,0,0]))
+
+# print(
+#   convert_list_of_bits_to_decimal_integer(
+#     interrogate_column_totals_gamma(
+#       total_each_column(input_list)
+#     )
+#   )
+# )
 # print(interrogate_column_totals_gamma(
 #   total_each_column(input_list)))    
 # print(total_each_column(input_list))
