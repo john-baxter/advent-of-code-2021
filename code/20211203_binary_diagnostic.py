@@ -47,16 +47,28 @@ def get_gamma_rate(input_list):
   return gamma_rate
 
 
+def get_epsilon_rate(input_list):
+  epsilon_rate = convert_list_of_bits_to_decimal_integer(
+    derive_epsilon_from_gamma(
+      interrogate_column_totals_gamma(
+        total_each_column(input_list)
+      )
+    )
+  )
+  return epsilon_rate
 
-print(get_gamma_rate(input_list))
+
+
+print(get_epsilon_rate(input_list))
+# print(get_gamma_rate(input_list))
 # print(
-#   convert_list_of_bits_to_decimal_integer(
-#     derive_epsilon_from_gamma(
-#       interrogate_column_totals_gamma(
-#         total_each_column(input_list)
-#       )
-#     )
-#   )
+  # convert_list_of_bits_to_decimal_integer(
+  #   derive_epsilon_from_gamma(
+  #     interrogate_column_totals_gamma(
+  #       total_each_column(input_list)
+  #     )
+  #   )
+  # )
 # )
 # print(derive_epsilon_from_gamma([1,1,1,1,1]))
 # print(derive_epsilon_from_gamma([0,0,0,0,0]))
