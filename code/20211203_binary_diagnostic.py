@@ -25,40 +25,37 @@ def interrogate_column_totals_gamma(list_of_ints):
 
 
 def convert_list_of_bits_to_decimal_integer(list_of_bits):
-  return int("".join(str(x) for x in list_of_bits), 2)
+  return int("".join(str(bit) for bit in list_of_bits), 2)
 
 
 def derive_epsilon_from_gamma(list_of_bits):
-  new_list_of_bits = []
-  for bit in list_of_bits:
-    bit = int(not bit)
-    new_list_of_bits.append(bit)
-  return new_list_of_bits
+  return [int(not bit) for bit in list_of_bits]
 
 
 def get_gamma_rate(input_list):
-  gamma_rate = convert_list_of_bits_to_decimal_integer(
+  return convert_list_of_bits_to_decimal_integer(
     interrogate_column_totals_gamma(
       total_each_column(input_list)
     )
   )
-  return gamma_rate
 
 
 def get_epsilon_rate(input_list):
-  epsilon_rate = convert_list_of_bits_to_decimal_integer(
+  return convert_list_of_bits_to_decimal_integer(
     derive_epsilon_from_gamma(
       interrogate_column_totals_gamma(
         total_each_column(input_list)
       )
     )
   )
-  return epsilon_rate
 
 
 def calculate_power_consumption(input_list):
-  power_consumption = get_gamma_rate(input_list) * get_epsilon_rate(input_list)
-  return power_consumption
+  return get_gamma_rate(input_list) * get_epsilon_rate(input_list)
 
-
+"""
+Print statements to display solutions
+-------------------------------------
+"""
+print("(3-1) The power consumption is:")
 print(calculate_power_consumption(input_list))
