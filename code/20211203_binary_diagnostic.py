@@ -58,8 +58,13 @@ def get_epsilon_rate(input_list):
   return epsilon_rate
 
 
+def calculate_power_consumption(input_list):
+  power_consumption = get_gamma_rate(input_list) * get_epsilon_rate(input_list)
+  return power_consumption
 
-print(get_epsilon_rate(input_list))
+
+print(calculate_power_consumption(input_list))
+# print(get_epsilon_rate(input_list))
 # print(get_gamma_rate(input_list))
 # print(
   # convert_list_of_bits_to_decimal_integer(
