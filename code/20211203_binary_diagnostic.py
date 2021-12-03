@@ -16,6 +16,16 @@ def total_each_column(list_of_string_numbers):
   return list_of_column_totals
 
 
-    
-    
+def interrogate_column_totals_gamma(list_of_ints):
+  list_of_bits = []
+  for i in list_of_ints:
+    if i > len(input_list) // 2:
+      list_of_bits.append(1)
+    if i < len(input_list) // 2:
+      list_of_bits.append(0)
+  return list_of_bits
+        
+
+print(interrogate_column_totals_gamma(
+  total_each_column(input_list)))    
 # print(total_each_column(input_list))
