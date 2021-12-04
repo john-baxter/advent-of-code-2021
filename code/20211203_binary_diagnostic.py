@@ -5,23 +5,23 @@ The input data has been copied into a .txt file
 Use code to convert this .txt into a list of (string) binary numbers, removing 
 the trailing newline from each.
 """
-# input_text = open('inputs/20211203_binary_diagnostic.txt')
-# input_list = list(input_text)
-# input_list = [binary_number.rstrip("\n") for binary_number in input_list]
-input_list = [
-  "00100",
-  "11110",
-  "10110",
-  "10111",
-  "10101",
-  "01111",
-  "00111",
-  "11100",
-  "10000",
-  "11001",
-  "00010",
-  "01010",
-]
+input_text = open('inputs/20211203_binary_diagnostic.txt')
+input_list = list(input_text)
+input_list = [binary_number.rstrip("\n") for binary_number in input_list]
+# input_list = [
+#   "00100",
+#   "11110",
+#   "10110",
+#   "10111",
+#   "10101",
+#   "01111",
+#   "00111",
+#   "11100",
+#   "10000",
+#   "11001",
+#   "00010",
+#   "01010",
+# ]
 
 
 def total_each_column(list_of_string_numbers):
@@ -197,23 +197,12 @@ def calculate_life_support_rating(given_list):
   return int(calculate_oxygen_rating(given_list), 2) * int(calculate_carbon_dioxide_rating(given_list), 2)
 
   
-    
+"""
+Print statements to display solutions
+-------------------------------------
+"""
+print("(3-1) The power consumption is:")
+print(calculate_power_consumption(input_list))
+print()
+print("(3-2) The life support rating is:")
 print(calculate_life_support_rating(input_list))
-# print(calculate_oxygen_rating(input_list))
-# print(calculate_carbon_dioxide_rating(input_list))
-
-
-
-
-
-
-
-
-
-
-# """
-# Print statements to display solutions
-# -------------------------------------
-# """
-# print("(3-1) The power consumption is:")
-# print(calculate_power_consumption(input_list))
